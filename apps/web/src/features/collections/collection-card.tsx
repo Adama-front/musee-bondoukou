@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Badge } from "@musee/ui";
 import type { CollectionPreview } from "./collection-repository";
 
 export function CollectionCard({ collection }: { collection: CollectionPreview }) {
@@ -18,7 +17,6 @@ export function CollectionCard({ collection }: { collection: CollectionPreview }
         </div>
       )}
       <div>
-        {collection.isMock ? <Badge variant="secondary" className="mb-3">Contenu mock</Badge> : null}
         <p className="mb-1 text-sm text-secondary-200">{collection.subtitle}</p>
         <h3 className="font-editorial text-h4 font-semibold">{collection.title}</h3>
       </div>

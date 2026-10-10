@@ -1,8 +1,9 @@
-import { Badge, FeatureIcon, type FeatureIconName } from "@musee/ui";
+import Link from "next/link";
+import { FeatureIcon, type FeatureIconName } from "@musee/ui";
 import type { CollectionCategoryPreview } from "./collection-repository";
 
 const icons: Record<CollectionCategoryPreview["id"], FeatureIconName> = {
-  objects: "building", art: "palette", heritage: "crown", documents: "book", sculpture: "diamond",
+  objects: "building", art: "palette", heritage: "crown", documents: "book", sculpture: "diamond", explore: "building",
 };
 
 export function CollectionCategoryCard({ category }: { category: CollectionCategoryPreview }) {
@@ -11,9 +12,10 @@ export function CollectionCategoryCard({ category }: { category: CollectionCateg
       <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-background text-secondary-700">
         <FeatureIcon name={icons[category.id]} />
       </div>
-      <h3 className="font-editorial text-h4 font-semibold">{category.title}</h3>
+      <h3 className="font-editorial text-h4 font-semibold">
+        {category.href ? <Link href={category.href} className="underline decoration-secondary underline-offset-4 hover:text-primary">{category.title}</Link> : category.title}
+      </h3>
       <p className="mt-3 text-sm text-muted-foreground">{category.description}</p>
-      {category.isMock ? <Badge className="mt-4" variant="secondary">Contenu mock</Badge> : null}
     </article>
   );
 }

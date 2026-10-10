@@ -15,7 +15,7 @@ export function FoundationPage() {
       <section aria-labelledby="controls"><SectionHeader title="Actions & états" eyebrow="01 · Composants" /><h3 id="controls" className="sr-only">Variantes des boutons</h3>
         <div className="flex flex-wrap gap-4"><Button>Action principale</Button><Button variant="secondary">Secondaire</Button><Button variant="outline">Découvrir</Button><Button variant="ghost">Annuler</Button><Button variant="danger">Archiver</Button><Button disabled>Indisponible</Button></div>
         <p className="mt-4 text-sm text-muted-foreground">Ces boutons présentent les variantes visuelles ; aucune opération métier n’est déclenchée.</p>
-        <div className="mt-8 flex flex-wrap gap-3"><Badge variant="success">Disponible</Badge><Badge variant="info">Consultation sur place</Badge><Badge variant="default">Indisponible</Badge><Badge variant="primary">Contenu mock</Badge></div>
+        <div className="mt-8 flex flex-wrap gap-3"><Badge variant="success">Disponible</Badge><Badge variant="info">Consultation sur place</Badge><Badge variant="default">Indisponible</Badge><Badge variant="primary">Exemple</Badge></div>
       </section>
       <section><SectionHeader title="Champs & messages" eyebrow="02 · Saisie" /><div className="grid gap-8 md:grid-cols-2">
         <div className="space-y-3"><label htmlFor="search" className="block font-semibold">Rechercher un ouvrage</label><Input id="search" type="search" placeholder="Titre, auteur, mot-clé" aria-describedby="search-help" /><p id="search-help" className="text-sm text-muted-foreground">Champ de démonstration, sans catalogue connecté.</p></div>

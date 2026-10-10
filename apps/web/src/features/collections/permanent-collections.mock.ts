@@ -7,4 +7,5 @@ export const permanentCollectionsMock: ReadonlyArray<CollectionCategoryPreview> 
   { id: "heritage", title: "Patrimoine culturel", description: "Présentation des thématiques culturelles à compléter avec les contenus validés.", isMock: true },
   { id: "documents", title: "Documents & archives", description: "Documents, sources et conditions de consultation à préciser.", isMock: true },
   { id: "sculpture", title: "Sculptures", description: "Matériaux, formes et histoires des œuvres à renseigner à partir des notices.", isMock: true },
+  { id: "explore", title: "Explorer le patrimoine", description: "Parcourir les collections et découvrir leurs notices.", isMock: false, href: "#collections" },
 ];

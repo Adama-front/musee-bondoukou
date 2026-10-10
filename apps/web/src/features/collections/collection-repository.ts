@@ -15,10 +15,11 @@ export interface CollectionRepository {
 }
 
 export interface CollectionCategoryPreview {
-  id: "objects" | "art" | "heritage" | "documents" | "sculpture";
+  id: "objects" | "art" | "heritage" | "documents" | "sculpture" | "explore";
   title: string;
   description: string;
   isMock: boolean;
+  href?: string;
 }
 
 export const collectionRepository: CollectionRepository = {

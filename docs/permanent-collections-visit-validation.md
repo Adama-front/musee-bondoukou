@@ -25,3 +25,11 @@ Les listes vides disposent d'un message dédié. Ces branches sont relues mais n
 - Contraste théorique du texte ivoire à 80 % sur Ink : environ 10,64:1. Aucun audit WCAG complet ni mesure Core Web Vitals.
 
 Captures : screenshots/permanent-collections-desktop.jpg et screenshots/visit-information-desktop.jpg. Les réglages personnels .vscode et les fichiers Next générés ne sont pas inclus dans le commit de cette tâche.
+
+## Ajustements validés — 10 octobre 2026
+
+La grille comporte désormais six cartes. « Explorer le patrimoine » renvoie à #collections ; son activation avec Entrée a été vérifiée. Les badges visibles « Contenu mock » sont retirés à la demande de l'utilisateur, y compris sur les fiches du catalogue. Les exemples des pages Design System portent maintenant le libellé « Exemple ». Les indicateurs de données mock restent dans les modèles internes.
+
+Horaires proposés puis explicitement validés par l'utilisateur : mardi à dimanche, de 9 h à 17 h ; fermé le lundi. Cette validation concerne le contenu affiché dans le projet et ne constitue pas une confirmation institutionnelle. Les autres conditions de visite restent à confirmer.
+
+Six cartes, absence du libellé « Contenu mock » et absence de débordement horizontal vérifiées à 320, 768 et 1440 px. Captures actualisées : permanent-collections-updated.jpg et visit-information-updated.jpg.
