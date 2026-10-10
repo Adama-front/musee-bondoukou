@@ -1,4 +1,5 @@
 import { collectionsMock } from "./collections.mock";
+import { permanentCollectionsMock } from "./permanent-collections.mock";
 
 export interface CollectionPreview {
   id: string;
@@ -10,8 +11,17 @@ export interface CollectionPreview {
 
 export interface CollectionRepository {
   getFeatured(): Promise<ReadonlyArray<CollectionPreview>>;
+  getCategories(): Promise<ReadonlyArray<CollectionCategoryPreview>>;
+}
+
+export interface CollectionCategoryPreview {
+  id: "objects" | "art" | "heritage" | "documents" | "sculpture";
+  title: string;
+  description: string;
+  isMock: boolean;
 }
 
 export const collectionRepository: CollectionRepository = {
   async getFeatured() { return collectionsMock; },
+  async getCategories() { return permanentCollectionsMock; },
 };
