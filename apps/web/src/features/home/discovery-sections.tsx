@@ -1,8 +1,5 @@
 import Link from "next/link";
-import { Container, EmptyState, SectionHeader, buttonVariants } from "@musee/ui";
-export function CollectionsSection() {
-  return <section id="collections" className="py-section"><Container><SectionHeader title="Les collections, au premier plan.">Les objets, les œuvres et leur contexte seront présentés à partir des notices officielles du musée.</SectionHeader><EmptyState title="Les collections seront bientôt présentées ici.">Notices et photographies à compléter.</EmptyState></Container></section>;
-}
+import { Container, buttonVariants } from "@musee/ui";
 export function LibrarySection() {
   return <section id="bibliotheque" className="bg-muted py-section"><Container className="grid gap-10 md:grid-cols-2 md:gap-16">
     <div><p className="mb-4 text-sm font-bold uppercase tracking-widest text-primary">La bibliothèque</p><h2 className="font-editorial text-h2 font-semibold">Le savoir se partage.<br />La curiosité se cultive.</h2></div>

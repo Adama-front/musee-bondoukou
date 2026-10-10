@@ -3,9 +3,11 @@ import { SiteFooter } from "../../shared/site-footer";
 import { homeRepository } from "./home-repository";
 import { MuseumHero } from "./museum-hero";
 import { MuseumIntroduction } from "./museum-introduction";
-import { CollectionsSection, LibrarySection } from "./discovery-sections";
+import { LibrarySection } from "./discovery-sections";
+import { CollectionsSection } from "../collections/collections-section";
+import { collectionRepository } from "../collections/collection-repository";
 import { AgendaSection, VisitSection } from "./practical-sections";
 export async function HomePage() {
-  const content = await homeRepository.getContent();
-  return <><SiteHeader overlay /><main id="main"><MuseumHero /><MuseumIntroduction /><CollectionsSection /><LibrarySection /><AgendaSection content={content} /><VisitSection /></main><SiteFooter /></>;
+  const [content, collections] = await Promise.all([homeRepository.getContent(), collectionRepository.getFeatured()]);
+  return <><SiteHeader overlay /><main id="main"><MuseumHero /><MuseumIntroduction /><CollectionsSection collections={collections} /><LibrarySection /><AgendaSection content={content} /><VisitSection /></main><SiteFooter /></>;
 }
