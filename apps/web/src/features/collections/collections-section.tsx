@@ -14,7 +14,6 @@ export function CollectionsSection({ collections }: { collections: ReadonlyArray
         </header>
         {collections.length > 0 ? (
           <>
-            {collections.some((collection) => collection.isMock) ? <p className="mb-6 text-center text-sm text-muted-foreground">Aperçu de démonstration : ces cartes ne représentent pas les collections réelles du musée.</p> : null}
             <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
               {collections.map((collection) => <li key={collection.id} className="min-w-0"><CollectionCard collection={collection} /></li>)}
             </ul>

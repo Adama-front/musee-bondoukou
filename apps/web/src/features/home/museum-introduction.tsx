@@ -13,9 +13,6 @@ function MuseumIllustration() {
         </div>
         <span aria-hidden="true" className="pointer-events-none absolute -bottom-4 right-4 h-24 w-24 rounded-md border border-secondary lg:-right-4" />
       </div>
-      <figcaption className="max-w-prose text-sm text-muted-foreground">
-        Illustration temporaire générée. Elle ne représente pas le Musée de Bondoukou.
-      </figcaption>
     </figure>
   );
 }

@@ -8,7 +8,7 @@ export const collectionsMock: ReadonlyArray<CollectionPreview> = Array.from(
     id: `demo-collection-${index + 1}`,
     title: `Collection de démonstration ${index + 1}`,
     subtitle: "Notice à compléter",
-    image: null,
+    image: { src: "/images/museum-hero-illustration.webp", alt: "" },
     isMock: true,
   }),
 );

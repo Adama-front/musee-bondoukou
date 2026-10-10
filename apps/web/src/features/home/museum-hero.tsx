@@ -14,6 +14,5 @@ export function MuseumHero() {
         <Link href="#visiter" className={cn(buttonVariants({ variant: "outline", size: "lg" }), "border-background text-background hover:bg-background/10")}>Préparer ma visite</Link>
       </div>
     </Container>
-    <p className="absolute inset-x-4 bottom-4 text-center text-xs text-background">Illustration temporaire générée. Elle ne représente pas le Musée de Bondoukou.</p>
   </section>;
 }

@@ -1,5 +1,9 @@
 # Section Collections — 10 octobre 2026
 
+## Ajustement demandé par l'utilisateur
+
+L'image décorative du hero est désormais utilisée dans les six cartes. Sur demande explicite, les deux légendes d'illustration du hero et de la présentation du musée ainsi que l'avertissement général au-dessus de la grille sont retirés. Les badges Contenu mock et titres de démonstration restent visibles. La provenance de l'image demeure documentée dans header-hero-validation.md ; elle ne devient pas une photographie officielle. TypeScript, lint et build passent après cet ajustement. Chargement des six images et suppression des mentions vérifiés dans le navigateur, avec inspection mobile et desktop. Capture actualisée : screenshots/collections-with-images.jpg.
+
 Le modèle d'expositions fourni est adapté à la section Collections située après la présentation du musée : en-tête centré, trait bronze, grille de six cartes au ratio 4:3 avec une hauteur minimale pour la lisibilité. Une colonne sur mobile, deux à partir de 640 px et trois à partir de 1024 px. Couleurs, typographie et rayons du Design System conservés.
 
 La feature collections contient le modèle typé, le repository mock, les données de démonstration, la carte et la section. Les repositories de l'accueil sont lus en parallèle. Les composants restent côté serveur, sans dépendance ajoutée. L'état vide est conservé lorsque le repository ne retourne aucune carte.
