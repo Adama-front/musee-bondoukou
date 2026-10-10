@@ -1,11 +1,5 @@
 import Link from "next/link";
 import { Container, EmptyState, SectionHeader, buttonVariants } from "@musee/ui";
-export function MuseumIntroduction() {
-  return <section id="musee" className="border-y border-border bg-muted py-section"><Container className="grid gap-8 md:grid-cols-2 md:gap-16">
-    <SectionHeader title="Le musée, un lieu de découverte." />
-    <div className="max-w-prose"><p className="text-lg">Découvrir le patrimoine culturel de Bondoukou et du Gontougo, rencontrer les collections et accéder au savoir : le musée et sa bibliothèque réunissent ces deux dimensions.</p><p className="mt-5 text-sm text-muted-foreground">Contenu temporaire. L’histoire du musée, ses missions officielles et la présentation du bâtiment seront intégrées après validation institutionnelle.</p></div>
-  </Container></section>;
-}
 export function CollectionsSection() {
   return <section id="collections" className="py-section"><Container><SectionHeader title="Les collections, au premier plan.">Les objets, les œuvres et leur contexte seront présentés à partir des notices officielles du musée.</SectionHeader><EmptyState title="Les collections seront bientôt présentées ici.">Notices et photographies à compléter.</EmptyState></Container></section>;
 }
