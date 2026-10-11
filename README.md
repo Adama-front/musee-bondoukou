@@ -27,6 +27,13 @@ pnpm build
 
 Les trois documents fournis sont conservés intégralement dans `docs/`. Les règles de travail sont rappelées dans `AGENTS.md`.
 
+- [Cahier des charges](docs/cahier-des-charges.md)
+- [Design System officiel](docs/design-system.md)
+- [Instructions initiales du projet](docs/instructions-projet.md)
+- [Suivi du projet : réalisé, tâches restantes et reprise](docs/suivi-projet.md)
+
+Lire le suivi avant de reprendre et le mettre à jour après chaque tâche terminée.
+
 - `apps/web` : site public, Next.js App Router.
 - `apps/admin` : administration frontend, Next.js App Router.
 - `packages/ui` : tokens CSS et primitives partagées.
