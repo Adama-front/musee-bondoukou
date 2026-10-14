@@ -1,6 +1,6 @@
 # Suivi — Musée de Bondoukou & Bibliothèque
 
-Dernière mise à jour : 11 octobre 2026. Ce fichier sert de point de reprise pour l'utilisateur et pour toute nouvelle session de travail.
+Dernière mise à jour : 14 octobre 2026. Ce fichier sert de point de reprise pour l'utilisateur et pour toute nouvelle session de travail.
 
 ## Reprendre sans perdre le contexte
 
@@ -10,7 +10,7 @@ Dernière mise à jour : 11 octobre 2026. Ce fichier sert de point de reprise po
 4. Pour chaque tâche significative : vérifier types, lint, build, puis les interactions, le responsive et l'accessibilité pertinents. Indiquer les contrôles réellement effectués et les limites.
 5. Préparer le commit et demander un accord explicite avant chaque push. Un accord ne vaut pas pour les tâches suivantes.
 
-Prochaine tâche : adapter la section **La Bibliothèque du Musée** au modèle que l'utilisateur doit fournir. Une section simple existe déjà ; sa refonte visuelle n'a pas commencé. Aucun développement supplémentaire n'est requis avant réception du modèle.
+Prochaine tâche : vérifier et faire valider le travail Bibliothèque déjà présent localement, puis réconcilier le suivi de son implémentation. Au 14 octobre, une section d'accueil refondue, une route `/bibliotheque`, sa feature et deux captures sont présentes sans être versionnées dans le dernier commit. Leur présence ne prouve ni validation utilisateur, ni validation officielle des contenus, ni publication. Préserver ces modifications. L'ancienne attente du modèle est remplacée par ce constat de reprise.
 
 ## Documents sources
 
@@ -24,7 +24,7 @@ Les trois fichiers sont déjà versionnés. Le 11 octobre 2026, leurs empreintes
 
 ## État réel du produit
 
-Le projet est un prototype frontend, pas un site institutionnel finalisé. Le site public possède trois routes : `/`, `/bibliotheque/catalogue` et `/design-system`. L'administration reste au stade des fondations. Il n'existe encore ni API réelle, ni base de données, ni authentification opérationnelle.
+Le projet est un prototype frontend, pas un site institutionnel finalisé. L'état local au 14 octobre comporte quatre routes : `/`, `/bibliotheque`, `/bibliotheque/catalogue` et `/design-system`. La page Bibliothèque fait partie des travaux locaux à valider et à versionner séparément. L'administration reste au stade des fondations. Il n'existe encore ni API réelle, ni base de données, ni authentification opérationnelle.
 
 Monorepo : `apps/web`, `apps/admin`, `packages/ui`, `packages/config`. Next.js App Router, React, TypeScript strict, Tailwind v4, pnpm ; Server Components par défaut. Les données passent par des repositories typés. Aucun nouveau package sans responsabilité concrète ; pas de SWR.
 
@@ -117,6 +117,7 @@ Validation : `pnpm lint`, `pnpm build`, puis `pnpm typecheck`. Lancer build et t
 | 9–10 octobre 2026 | Socle, accueil, catalogue, header/hero et présentation | Implémentés ; voir les comptes rendus datés |
 | 10 octobre 2026 | Grille collections, collections permanentes et visite | Implémentées et poussées jusqu'à `56bee3e` après accord |
 | 11 octobre 2026 | Vérification des trois sources et création du suivi permanent | Documentation seule ; push autorisé par l'utilisateur dans sa demande |
-| Prochaine tâche | Bibliothèque du Musée | Attente du modèle fourni par l'utilisateur |
+| 14 octobre 2026 | Analyse des documents, de l'architecture et du code ; [rapport](analyse-projet-2026-10-14.md) | Analyse terminée, sans correction applicative. Lint réussi (2/3 tâches en cache), build web réussi après autorisation réseau et build admin en cache ; types réussis via cache. Pas de contrôle navigateur ni validation officielle. Focus du footer à 2,45:1 et catégorie catalogue inconnue à traiter. Commit documentaire séparé des travaux locaux ; push soumis à accord. |
+| Prochaine tâche | Bibliothèque du Musée | Vérifier et faire valider le travail local, puis corriger les points prioritaires de l'analyse |
 
 Après chaque tâche : mettre à jour les cases concernées, l'état réel, les décisions et les vérifications ; ajouter une ligne au journal et remplacer la prochaine étape. Ne pas cocher une fonctionnalité seulement parce qu'une section ou un état vide existe. En cas d'arrêt, noter le blocage concret et la commande ou l'action nécessaire pour reprendre.
