@@ -15,7 +15,7 @@ Site public : http://localhost:3000 — Administration : http://localhost:3001
 
 Si le port 3000 est occupé : `pnpm --filter @musee/web exec next dev --port 3010 --hostname 127.0.0.1`.
 
-Routes web : `/`, `/bibliotheque/catalogue`, `/design-system`. L'administration conserve sa page de référence.
+Routes web : `/`, `/bibliotheque`, `/bibliotheque/catalogue`, `/design-system`. L'administration conserve sa page de référence.
 
 ```sh
 pnpm typecheck
