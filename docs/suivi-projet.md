@@ -1,6 +1,6 @@
 # Suivi — Musée de Bondoukou & Bibliothèque
 
-Dernière mise à jour : 14 octobre 2026. Ce fichier sert de point de reprise pour l'utilisateur et pour toute nouvelle session de travail.
+Dernière mise à jour : 15 octobre 2026. Ce fichier sert de point de reprise pour l'utilisateur et pour toute nouvelle session de travail.
 
 ## Reprendre sans perdre le contexte
 
@@ -10,7 +10,7 @@ Dernière mise à jour : 14 octobre 2026. Ce fichier sert de point de reprise po
 4. Pour chaque tâche significative : vérifier types, lint, build, puis les interactions, le responsive et l'accessibilité pertinents. Indiquer les contrôles réellement effectués et les limites.
 5. Préparer le commit et demander un accord explicite avant chaque push. Un accord ne vaut pas pour les tâches suivantes.
 
-Prochaine tâche : terminer les vérifications visuelles, responsive et clavier du travail Bibliothèque, puis traiter les points prioritaires du rapport d'analyse. Le 14 octobre, l'utilisateur a demandé le lancement du serveur puis autorisé le push GitHub. La section d'accueil refondue, `/bibliotheque`, sa feature et les deux captures sont incluses dans le commit de la Bibliothèque. Cet accord de push ne constitue pas une validation institutionnelle des contenus ni un déploiement du site.
+Prochaine tâche : l'utilisateur fournit le prochain modèle pour la section **Agenda — Expositions & rendez-vous**, située après la Bibliothèque. Attendre son modèle avant de concevoir cette section. Le header fixe demandé le 15 octobre est implémenté et vérifié ; son push attend un nouvel accord explicite. La Bibliothèque et l'analyse ont été poussées le 14 octobre jusqu'à `565c5b3`. Un push ne constitue pas une validation institutionnelle des contenus ni un déploiement du site.
 
 ## Documents sources
 
@@ -38,6 +38,7 @@ Une case cochée signifie « implémenté dans le prototype », sans garantir la
 - [x] Socle monorepo, configuration stricte, tokens, polices et primitives partagées ; page de référence web à `/design-system` et référence admin.
 - [x] Accueil composé par features avec header, menu mobile, hero, présentation, collections, bibliothèque, agenda, visite et footer.
 - [x] Header transparent et hero adaptés aux références desktop/mobile fournies ; navigation et appels à l'action.
+- [x] Header fixé en haut du viewport ; accueil transparent à scroll nul, fond Ink dès le défilement, retour transparent en haut. Fond ivoire et espace réservé sur les pages intérieures ; décalage des ancres pour éviter le masquage des titres.
 - [x] Présentation du musée adaptée au modèle image à gauche / texte à droite.
 - [x] Grille de six aperçus de collections adaptée au modèle fourni, utilisant le même visuel que le hero.
 - [x] Section Collections permanentes : six cartes, dont « Explorer le patrimoine » avec lien vers `#collections`.
@@ -56,7 +57,7 @@ Ordre actuel de l'accueil : header → hero → présentation du musée → gril
 
 Cette liste suit le périmètre du cahier des charges ; l'ordre détaillé se précisera avec les modèles et les validations de l'utilisateur.
 
-- [ ] **Priorité immédiate :** achever la recette visuelle, responsive et clavier de la Bibliothèque et traiter les points prioritaires du rapport d'analyse.
+- [ ] **Prochaine section guidée par l'utilisateur :** recevoir le modèle Agenda — Expositions & rendez-vous, puis l'adapter au Design System. Les vérifications restantes de la Bibliothèque et les corrections de l'analyse restent à suivre séparément.
 - [ ] Finaliser l'accueil : présentation de la programmation, actualités, contact et footer selon les modèles retenus.
 - [ ] Construire les pages Musée / À propos avec histoire, missions et contenus validés.
 - [ ] Construire la liste complète des collections et les fiches objets/œuvres, avec images et notices.
@@ -105,6 +106,8 @@ Références : [socle](validation-socle.md), [accueil et catalogue](accueil-vali
 
 Pour l'état Bibliothèque du 14 octobre : lint réussi (web exécuté, admin/UI en cache), build web réussi après accès réseau aux polices Google et build admin en cache, types réussis via cache Turbo après le build. Le serveur web a été lancé sur `http://127.0.0.1:3010` car le port 3000 est occupé par un autre projet ; une requête GET `/bibliotheque` a renvoyé HTTP 200 et le titre attendu. Aucun changement applicatif n'a suivi ces contrôles avant préparation du commit. `git diff --check` réussi. Les captures [accueil Bibliothèque](screenshots/library-home.jpg) et [page Bibliothèque](screenshots/library-page.jpg) proviennent du travail local préexistant ; elles ne constituent pas une recette effectuée pendant cette session. Pas de nouvel audit navigateur, WCAG ou Core Web Vitals.
 
+Pour le header fixe du 15 octobre : `pnpm lint`, `pnpm build`, puis `pnpm typecheck` réussis (web exécuté ; admin/UI restaurés du cache quand applicable). Accès au cache pnpm hors sandbox autorisé pour exécuter les commandes. Dans le navigateur : position fixed à top 0, transparence à scroll 0, fond Ink après défilement, hauteur de contenu 96 px et absence de débordement horizontal aux largeurs 320, 430, 768, 1024, 1440 et 1920 px. Lien desktop « Visiter » activé : section positionnée à environ 112 px, sous le header. À 320 px, menu ouvert avec Entrée, fermé avec Échap ; focus rendu au bouton et contour clair visible. Bibliothèque : fond ivoire et espace réservé de 96 px vérifiés. Les contrôles de largeur ne constituent pas une recette complète des pages. La transition reprend le token de durée existant et la règle globale de mouvement réduit reste applicable ; pas de test spécifique du réglage système de mouvement réduit ni d'audit WCAG complet. Captures : [desktop](screenshots/fixed-header-desktop.png), [mobile](screenshots/fixed-header-mobile.png). Les trois documents sources et les tokens de `packages/ui` sont conservés.
+
 ## Démarrage local
 
 Depuis la racine : `pnpm install`, puis `pnpm dev`. Web : `http://localhost:3000` ; admin : `http://localhost:3001`.
@@ -122,6 +125,7 @@ Validation : `pnpm lint`, `pnpm build`, puis `pnpm typecheck`. Lancer build et t
 | 11 octobre 2026 | Vérification des trois sources et création du suivi permanent | Documentation seule ; push autorisé par l'utilisateur dans sa demande |
 | 14 octobre 2026 | Analyse des documents, de l'architecture et du code ; [rapport](analyse-projet-2026-10-14.md) | Analyse terminée, sans correction applicative. Lint réussi (2/3 tâches en cache), build web réussi après autorisation réseau et build admin en cache ; types réussis via cache. Pas de contrôle navigateur ni validation officielle. Focus du footer à 2,45:1 et catégorie catalogue inconnue à traiter. Commit documentaire séparé des travaux locaux ; push soumis à accord. |
 | 14 octobre 2026 | Reprise de la Bibliothèque et préparation de sa publication GitHub | Implémentation et captures locales intégrées avec suivi et README actualisés. HTTP 200 vérifié sur le serveur local ; contrôles techniques ci-dessus. Push explicitement autorisé par l'utilisateur pour cette tâche ; résultat à vérifier avec la référence distante. Aucune publication du site ni validation institutionnelle annoncée. |
-| Prochaine tâche | Recette Bibliothèque et corrections prioritaires | Vérifier responsive/clavier, focus du footer et cohérence des catégories du catalogue |
+| 15 octobre 2026 | Header fixe avec fond au défilement | Implémenté et contrôlé : lint/build/types, six largeurs, transparence/fond, ancre et menu clavier. Composant serveur conservé avec enveloppe client pour l'état de scroll. Aucune dépendance ajoutée. Push en attente d'accord pour cette tâche ; aucun déploiement. |
+| Prochaine tâche | Agenda — Expositions & rendez-vous | Attente du modèle fourni par l'utilisateur ; ne pas anticiper sa composition |
 
 Après chaque tâche : mettre à jour les cases concernées, l'état réel, les décisions et les vérifications ; ajouter une ligne au journal et remplacer la prochaine étape. Ne pas cocher une fonctionnalité seulement parce qu'une section ou un état vide existe. En cas d'arrêt, noter le blocage concret et la commande ou l'action nécessaire pour reprendre.

@@ -2,3 +2,8 @@
 @import "@musee/ui/styles.css";
 @source "../../../../packages/ui/src";
 
+:root {
+  --site-header-height: 6rem;
+  scroll-padding-top: calc(var(--site-header-height) + 1rem);
+}
+
