@@ -7,3 +7,7 @@
   scroll-padding-top: calc(var(--site-header-height) + 1rem);
 }
 
+.site-footer {
+  --footer-wordmark-size: clamp(56px, 8vw, 144px);
+}
+
