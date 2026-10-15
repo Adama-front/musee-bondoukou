@@ -10,7 +10,7 @@ Dernière mise à jour : 15 octobre 2026. Ce fichier sert de point de reprise po
 4. Pour chaque tâche significative : vérifier types, lint, build, puis les interactions, le responsive et l'accessibilité pertinents. Indiquer les contrôles réellement effectués et les limites.
 5. Préparer le commit et demander un accord explicite avant chaque push. Un accord ne vaut pas pour les tâches suivantes.
 
-Prochaine tâche : faire vérifier par l'utilisateur le footer adapté à son modèle du 15 octobre. Le header fixe et le footer sont implémentés et vérifiés techniquement ; leurs pushes attendent un nouvel accord explicite. Pour la prochaine section Agenda — Expositions & rendez-vous, attendre le modèle fourni par l'utilisateur avant de concevoir. La Bibliothèque et l'analyse ont été poussées le 14 octobre jusqu'à `565c5b3`. Un push ne constitue pas une validation institutionnelle des contenus ni un déploiement du site.
+Prochaine tâche : faire vérifier l'accueil sans la section « Expositions & rendez-vous », retirée à la demande de l'utilisateur le 15 octobre, puis attendre son prochain modèle. Ne pas réintroduire cette section sans demande. Le header fixe et le footer ont été poussés sur `origin/master` jusqu'à `e72f575` après accord explicite ; le retrait de la section constitue une tâche séparée dont le push attend un nouvel accord. Un push ne constitue pas une validation institutionnelle des contenus ni un déploiement du site.
 
 ## Documents sources
 
@@ -36,7 +36,7 @@ Une case cochée signifie « implémenté dans le prototype », sans garantir la
 
 - [x] Conservation intégrale des trois documents initiaux dans `docs/` et règles de collaboration dans `AGENTS.md`.
 - [x] Socle monorepo, configuration stricte, tokens, polices et primitives partagées ; page de référence web à `/design-system` et référence admin.
-- [x] Accueil composé par features avec header, menu mobile, hero, présentation, collections, bibliothèque, agenda, visite et footer.
+- [x] Accueil composé par features avec header, menu mobile, hero, présentation, collections, bibliothèque, visite et footer. Section Agenda retirée le 15 octobre à la demande de l'utilisateur.
 - [x] Header transparent et hero adaptés aux références desktop/mobile fournies ; navigation et appels à l'action.
 - [x] Header fixé en haut du viewport ; accueil transparent à scroll nul, fond Ink dès le défilement, retour transparent en haut. Fond ivoire et espace réservé sur les pages intérieures ; décalage des ancres pour éviter le masquage des titres.
 - [x] Présentation du musée adaptée au modèle image à gauche / texte à droite.
@@ -47,19 +47,19 @@ Une case cochée signifie « implémenté dans le prototype », sans garantir la
 - [x] Retrait des badges visibles « Contenu mock » et des légendes temporaires demandées par l'utilisateur. Les indicateurs de démonstration internes et la documentation restent conservés.
 - [x] Catalogue de démonstration : trois fiches, recherche normalisée par titre/auteur/mot-clé, filtre catégorie, paramètres dans l'URL, réinitialisation et état sans résultat.
 - [x] Section Bibliothèque de l'accueil refondue et page `/bibliotheque` composée par feature avec repository mock typé : présentation, accès au catalogue, horaires/consultation à confirmer, événements et actualités vides, contact à compléter. Navigation principale et fil d'Ariane du catalogue reliés à la page.
-- [x] Agenda initial avec états vides pour les expositions et événements ; footer initial.
+- [x] Agenda initial avec états vides réalisé puis retiré de l'accueil le 15 octobre à la demande de l'utilisateur ; footer initial remplacé par la refonte ci-dessous.
 - [x] Footer refondu d'après le modèle Missou fourni par l'utilisateur : grande signature typographique à gauche, deux colonnes de liens, appel à préparer la visite et ligne inférieure avec séparateur. Adaptation Ink/ivoire/bronze et Cormorant Garamond/Nunito ; liens limités aux destinations existantes. Pas de coordonnées, réseaux sociaux, documents juridiques ou WhatsApp inventés.
 - [x] GitHub configuré et code des sections envoyé sur `master`, jusqu'au commit `56bee3e`.
 - [x] Création de ce suivi, liens depuis le README et obligation de mise à jour dans `AGENTS.md`.
 
-Ordre actuel de l'accueil : header → hero → présentation du musée → grille collections → collections permanentes → informations de visite → bibliothèque refondue → agenda initial → footer.
+Ordre actuel de l'accueil : header → hero → présentation du musée → grille collections → collections permanentes → informations de visite → bibliothèque refondue → footer.
 
 ## Tâches restantes — site public
 
 Cette liste suit le périmètre du cahier des charges ; l'ordre détaillé se précisera avec les modèles et les validations de l'utilisateur.
 
-- [ ] **Prochaine section guidée par l'utilisateur :** recevoir le modèle Agenda — Expositions & rendez-vous, puis l'adapter au Design System. Les vérifications restantes de la Bibliothèque et les corrections de l'analyse restent à suivre séparément.
-- [ ] Finaliser l'accueil : présentation de la programmation, actualités, contact et footer selon les modèles retenus.
+- [ ] **Suite guidée par l'utilisateur :** attendre son prochain modèle ; ne pas réintroduire l'Agenda retiré de l'accueil. Les vérifications restantes de la Bibliothèque et les corrections de l'analyse restent à suivre séparément.
+- [ ] Finaliser les contenus de l'accueil et du footer selon les modèles et informations officielles fournis.
 - [ ] Construire les pages Musée / À propos avec histoire, missions et contenus validés.
 - [ ] Construire la liste complète des collections et les fiches objets/œuvres, avec images et notices.
 - [ ] Construire les pages liste et fiche des expositions.
@@ -111,6 +111,8 @@ Pour le header fixe du 15 octobre : `pnpm lint`, `pnpm build`, puis `pnpm typech
 
 Pour le footer du 15 octobre : `pnpm lint`, `pnpm build`, puis `pnpm typecheck` réussis (web exécuté, autres tâches issues du cache lorsque pertinent). Footer et page sans débordement horizontal aux largeurs 320, 430, 768, 1024, 1440 et 1920 px ; composition inspectée visuellement à 1440 et 320 px. Navigation avec Tab depuis la signature jusqu'au CTA et focus visible contrôlés. Lien « Consulter les ouvrages » activé avec Entrée : arrivée sur `/bibliotheque#horaires`, cible présente à environ 112 px sous le header. Contrastes calculés sur Ink : ivoire 16,15:1, bronze clair 12,43:1, texte ivoire à 80 % environ 10,64:1 ; ce ne sont pas les résultats d'un audit WCAG exhaustif. Focus clair du footer appliqué localement, corrigeant le contraste faible identifié dans l'analyse. Aucune dépendance ou frontière client ajoutée. Taille de signature définie par un token local au footer dans le CSS web ; `packages/ui` et les trois documents sources restent intacts. Captures : [desktop](screenshots/footer-desktop.png), [mobile](screenshots/footer-mobile.png). L'outil de recherche Python du skill UI/UX n'a pas pu être exécuté avec les lanceurs disponibles ; les décisions reposent sur le modèle utilisateur, le Design System officiel et les règles d'accessibilité, sans résultat de cette base revendiqué. Validation visuelle utilisateur et contenus institutionnels encore en attente.
 
+Pour le retrait de l'Agenda du 15 octobre : suppression de son appel dans `HomePage`, du composant et du repository mock exclusivement utilisés par cette section ; liens vers `/#agenda` supprimés dans la navigation partagée et le footer. Recherche dans les sources : aucune référence résiduelle à `AgendaSection`, `HomeContent`, `homeRepository`, `practical-sections` ou `/#agenda`. `pnpm lint`, `pnpm build` et `pnpm typecheck` réussis (web exécuté ; autres tâches en cache lorsque pertinent). Navigateur : absence du titre, de la section `#agenda` et des liens correspondants ; Bibliothèque dernière section de `main`, suivie du footer. Aucun débordement horizontal à 320 et 1440 px ; rendu desktop inspecté et [capture enregistrée](screenshots/home-without-agenda.png). Les états événements/actualités de la page Bibliothèque restent présents. Pas de nouvel audit complet clavier, contrastes ou WCAG pour ce retrait ; aucun style interactif modifié. `git diff --check` réussi. Aucun contenu officiel ni document source modifié.
+
 ## Démarrage local
 
 Depuis la racine : `pnpm install`, puis `pnpm dev`. Web : `http://localhost:3000` ; admin : `http://localhost:3001`.
@@ -130,6 +132,7 @@ Validation : `pnpm lint`, `pnpm build`, puis `pnpm typecheck`. Lancer build et t
 | 14 octobre 2026 | Reprise de la Bibliothèque et préparation de sa publication GitHub | Implémentation et captures locales intégrées avec suivi et README actualisés. HTTP 200 vérifié sur le serveur local ; contrôles techniques ci-dessus. Push explicitement autorisé par l'utilisateur pour cette tâche ; résultat à vérifier avec la référence distante. Aucune publication du site ni validation institutionnelle annoncée. |
 | 15 octobre 2026 | Header fixe avec fond au défilement | Implémenté et contrôlé : lint/build/types, six largeurs, transparence/fond, ancre et menu clavier. Composant serveur conservé avec enveloppe client pour l'état de scroll. Aucune dépendance ajoutée. Push en attente d'accord pour cette tâche ; aucun déploiement. |
 | 15 octobre 2026 | Footer adapté au modèle fourni | Implémenté ; contrôles techniques, six largeurs, captures desktop/mobile, focus et lien de consultation vérifiés. Validation visuelle utilisateur et push en attente ; pas de contenu officiel inventé ni déploiement. |
-| Prochaine tâche | Validation du footer, puis Agenda — Expositions & rendez-vous | Faire vérifier le footer ; attendre le modèle utilisateur pour l'Agenda et un accord explicite avant chaque push |
+| 15 octobre 2026 | Push header/footer puis retrait de l'Agenda de l'accueil | Push confirmé jusqu'à `e72f575` sur `origin/master`. Section et code inutilisé retirés ensuite dans une tâche distincte ; lint/build/types et navigateur à 320/1440 px vérifiés. Push du retrait en attente d'un nouvel accord ; aucun déploiement du site. |
+| Prochaine tâche | Vérification de l'accueil sans Agenda | Attendre le prochain modèle utilisateur et l'accord explicite avant le push de ce retrait |
 
 Après chaque tâche : mettre à jour les cases concernées, l'état réel, les décisions et les vérifications ; ajouter une ligne au journal et remplacer la prochaine étape. Ne pas cocher une fonctionnalité seulement parce qu'une section ou un état vide existe. En cas d'arrêt, noter le blocage concret et la commande ou l'action nécessaire pour reprendre.

@@ -4,7 +4,7 @@ import { navigation } from "./navigation";
 
 type FooterLink = readonly [label: string, href: string];
 const exploreLinks: readonly FooterLink[] = [
-  ...navigation.slice(0, 4),
+  ...navigation.filter(([, href]) => href !== "/#visiter"),
   ["Catalogue des ouvrages", "/bibliotheque/catalogue"],
 ];
 const informationLinks: readonly FooterLink[] = [
