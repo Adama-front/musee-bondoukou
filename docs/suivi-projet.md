@@ -10,7 +10,7 @@ Dernière mise à jour : 15 octobre 2026. Ce fichier sert de point de reprise po
 4. Pour chaque tâche significative : vérifier types, lint, build, puis les interactions, le responsive et l'accessibilité pertinents. Indiquer les contrôles réellement effectués et les limites.
 5. Préparer le commit et demander un accord explicite avant chaque push. Un accord ne vaut pas pour les tâches suivantes.
 
-Prochaine tâche : faire vérifier l'accueil sans la section « Expositions & rendez-vous », retirée à la demande de l'utilisateur le 15 octobre, puis attendre son prochain modèle. Ne pas réintroduire cette section sans demande. Le header fixe et le footer ont été poussés sur `origin/master` jusqu'à `e72f575` après accord explicite ; le retrait de la section constitue une tâche séparée dont le push attend un nouvel accord. Un push ne constitue pas une validation institutionnelle des contenus ni un déploiement du site.
+Prochaine tâche : faire vérifier les deux nouvelles sections demandées avec les modèles du 15 octobre : **Événements & ateliers**, puis **Galerie**, après la Bibliothèque. L'ancien bloc « Expositions & rendez-vous » reste supprimé ; son retrait a été poussé après accord jusqu'à `ac8a805`. La nouvelle grille de six activités constitue une nouvelle demande explicite et ne rétablit pas l'ancien bloc. Les deux sections sont implémentées sur mocks et illustrations génériques ; validation visuelle, contenus officiels et accord de push restent distincts. Attendre le prochain modèle utilisateur pour poursuivre. Un push n'est pas un déploiement du site.
 
 ## Documents sources
 
@@ -49,16 +49,17 @@ Une case cochée signifie « implémenté dans le prototype », sans garantir la
 - [x] Section Bibliothèque de l'accueil refondue et page `/bibliotheque` composée par feature avec repository mock typé : présentation, accès au catalogue, horaires/consultation à confirmer, événements et actualités vides, contact à compléter. Navigation principale et fil d'Ariane du catalogue reliés à la page.
 - [x] Agenda initial avec états vides réalisé puis retiré de l'accueil le 15 octobre à la demande de l'utilisateur ; footer initial remplacé par la refonte ci-dessous.
 - [x] Footer refondu d'après le modèle Missou fourni par l'utilisateur : grande signature typographique à gauche, deux colonnes de liens, appel à préparer la visite et ligne inférieure avec séparateur. Adaptation Ink/ivoire/bronze et Cormorant Garamond/Nunito ; liens limités aux destinations existantes. Pas de coordonnées, réseaux sociaux, documents juridiques ou WhatsApp inventés.
+- [x] Deux nouvelles sections d'après les modèles fournis le 15 octobre : Événements & ateliers (six cartes de démonstration) puis galerie en mosaïque (huit illustrations d'ambiance, dont six nouvellement générées). Mocks et repositories typés par feature ; pas de dates ni de programmation institutionnelle inventées.
 - [x] GitHub configuré et code des sections envoyé sur `master`, jusqu'au commit `56bee3e`.
 - [x] Création de ce suivi, liens depuis le README et obligation de mise à jour dans `AGENTS.md`.
 
-Ordre actuel de l'accueil : header → hero → présentation du musée → grille collections → collections permanentes → informations de visite → bibliothèque refondue → footer.
+Ordre actuel de l'accueil : header → hero → présentation du musée → grille collections → collections permanentes → informations de visite → bibliothèque refondue → événements & ateliers → galerie → footer.
 
 ## Tâches restantes — site public
 
 Cette liste suit le périmètre du cahier des charges ; l'ordre détaillé se précisera avec les modèles et les validations de l'utilisateur.
 
-- [ ] **Suite guidée par l'utilisateur :** attendre son prochain modèle ; ne pas réintroduire l'Agenda retiré de l'accueil. Les vérifications restantes de la Bibliothèque et les corrections de l'analyse restent à suivre séparément.
+- [ ] **Suite guidée par l'utilisateur :** faire vérifier Événements & ateliers et Galerie, puis attendre son prochain modèle. Les vérifications restantes de la Bibliothèque et les corrections de l'analyse restent à suivre séparément.
 - [ ] Finaliser les contenus de l'accueil et du footer selon les modèles et informations officielles fournis.
 - [ ] Construire les pages Musée / À propos avec histoire, missions et contenus validés.
 - [ ] Construire la liste complète des collections et les fiches objets/œuvres, avec images et notices.
@@ -133,6 +134,8 @@ Validation : `pnpm lint`, `pnpm build`, puis `pnpm typecheck`. Lancer build et t
 | 15 octobre 2026 | Header fixe avec fond au défilement | Implémenté et contrôlé : lint/build/types, six largeurs, transparence/fond, ancre et menu clavier. Composant serveur conservé avec enveloppe client pour l'état de scroll. Aucune dépendance ajoutée. Push en attente d'accord pour cette tâche ; aucun déploiement. |
 | 15 octobre 2026 | Footer adapté au modèle fourni | Implémenté ; contrôles techniques, six largeurs, captures desktop/mobile, focus et lien de consultation vérifiés. Validation visuelle utilisateur et push en attente ; pas de contenu officiel inventé ni déploiement. |
 | 15 octobre 2026 | Push header/footer puis retrait de l'Agenda de l'accueil | Push confirmé jusqu'à `e72f575` sur `origin/master`. Section et code inutilisé retirés ensuite dans une tâche distincte ; lint/build/types et navigateur à 320/1440 px vérifiés. Push du retrait en attente d'un nouvel accord ; aucun déploiement du site. |
-| Prochaine tâche | Vérification de l'accueil sans Agenda | Attendre le prochain modèle utilisateur et l'accord explicite avant le push de ce retrait |
+| 15 octobre 2026 | Push du retrait de l'ancien Agenda | Confirmé jusqu'à `ac8a805` sur `origin/master`, après nouvel accord utilisateur |
+| 15 octobre 2026 | Événements & ateliers et Galerie selon deux nouveaux modèles | Implémentés sur mocks ; six cartes et huit illustrations, dont six générées. Lint/build/types réussis (web exécuté, autres tâches en cache lorsque pertinent), responsive à six largeurs et chargement des huit images vérifiés ; [compte rendu](activities-gallery-validation.md), [provenance des images](gallery-assets.md). Pas de validation institutionnelle, push ou déploiement pour cette tâche. |
+| Prochaine tâche | Validation visuelle des deux nouvelles sections | Faire vérifier le rendu puis attendre le prochain modèle ; push soumis à nouvel accord explicite |
 
 Après chaque tâche : mettre à jour les cases concernées, l'état réel, les décisions et les vérifications ; ajouter une ligne au journal et remplacer la prochaine étape. Ne pas cocher une fonctionnalité seulement parce qu'une section ou un état vide existe. En cas d'arrêt, noter le blocage concret et la commande ou l'action nécessaire pour reprendre.
