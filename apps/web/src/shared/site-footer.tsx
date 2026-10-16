@@ -10,7 +10,7 @@ const exploreLinks: readonly FooterLink[] = [
 const informationLinks: readonly FooterLink[] = [
   ["Préparer ma visite", "/#visiter"],
   ["Consulter les ouvrages", "/bibliotheque#horaires"],
-  ["Localisation & contact", "/bibliotheque#contact"],
+  ["Localisation & contact", "/#contact"],
 ];
 
 function FooterIdentity() {

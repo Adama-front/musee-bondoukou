@@ -1,6 +1,6 @@
 # Suivi — Musée de Bondoukou & Bibliothèque
 
-Dernière mise à jour : 15 octobre 2026. Ce fichier sert de point de reprise pour l'utilisateur et pour toute nouvelle session de travail.
+Dernière mise à jour : 16 octobre 2026. Ce fichier sert de point de reprise pour l'utilisateur et pour toute nouvelle session de travail.
 
 ## Reprendre sans perdre le contexte
 
@@ -10,7 +10,7 @@ Dernière mise à jour : 15 octobre 2026. Ce fichier sert de point de reprise po
 4. Pour chaque tâche significative : vérifier types, lint, build, puis les interactions, le responsive et l'accessibilité pertinents. Indiquer les contrôles réellement effectués et les limites.
 5. Préparer le commit et demander un accord explicite avant chaque push. Un accord ne vaut pas pour les tâches suivantes.
 
-Prochaine tâche : faire vérifier les deux nouvelles sections demandées avec les modèles du 15 octobre : **Événements & ateliers**, puis **Galerie**, après la Bibliothèque. L'ancien bloc « Expositions & rendez-vous » reste supprimé ; son retrait a été poussé après accord jusqu'à `ac8a805`. La nouvelle grille de six activités constitue une nouvelle demande explicite et ne rétablit pas l'ancien bloc. Les deux sections sont implémentées sur mocks et illustrations génériques ; validation visuelle, contenus officiels et accord de push restent distincts. Attendre le prochain modèle utilisateur pour poursuivre. Un push n'est pas un déploiement du site.
+Prochaine tâche : faire vérifier les deux dernières sections de l'accueil, **Témoignages**, puis **Contact & localisation**, ajoutées après la galerie d'après les modèles du 15 octobre. Elles sont implémentées sur mocks : avis explicitement fictifs, coordonnées officielles à confirmer, formulaire sans envoi et carte générale de Bondoukou. Préparer leur commit puis demander un accord explicite pour leur push. Les sections Événements & ateliers et Galerie ont été poussées après accord jusqu'à `5b639a9`. Attendre les instructions de l'utilisateur pour la suite. Un push n'est pas un déploiement du site.
 
 ## Documents sources
 
@@ -50,16 +50,17 @@ Une case cochée signifie « implémenté dans le prototype », sans garantir la
 - [x] Agenda initial avec états vides réalisé puis retiré de l'accueil le 15 octobre à la demande de l'utilisateur ; footer initial remplacé par la refonte ci-dessous.
 - [x] Footer refondu d'après le modèle Missou fourni par l'utilisateur : grande signature typographique à gauche, deux colonnes de liens, appel à préparer la visite et ligne inférieure avec séparateur. Adaptation Ink/ivoire/bronze et Cormorant Garamond/Nunito ; liens limités aux destinations existantes. Pas de coordonnées, réseaux sociaux, documents juridiques ou WhatsApp inventés.
 - [x] Deux nouvelles sections d'après les modèles fournis le 15 octobre : Événements & ateliers (six cartes de démonstration) puis galerie en mosaïque (huit illustrations d'ambiance, dont six nouvellement générées). Mocks et repositories typés par feature ; pas de dates ni de programmation institutionnelle inventées.
-- [x] GitHub configuré et code des sections envoyé sur `master`, jusqu'au commit `56bee3e`.
+- [x] Deux dernières sections de l'accueil : carrousel manuel Témoignages avec trois exemples fictifs, puis Contact & localisation avec formulaire de démonstration validé par Zod, trois cartes de coordonnées à confirmer et carte générale de Bondoukou. Navigation clavier, erreurs et retour de focus vérifiés ; aucun message envoyé ni stocké.
+- [x] GitHub configuré et code des sections envoyé sur `master`, jusqu'au commit `5b639a9`. Le push des sections Témoignages et Contact reste soumis à un nouvel accord explicite.
 - [x] Création de ce suivi, liens depuis le README et obligation de mise à jour dans `AGENTS.md`.
 
-Ordre actuel de l'accueil : header → hero → présentation du musée → grille collections → collections permanentes → informations de visite → bibliothèque refondue → événements & ateliers → galerie → footer.
+Ordre actuel de l'accueil : header → hero → présentation du musée → grille collections → collections permanentes → informations de visite → bibliothèque refondue → événements & ateliers → galerie → témoignages → contact & localisation → footer.
 
 ## Tâches restantes — site public
 
 Cette liste suit le périmètre du cahier des charges ; l'ordre détaillé se précisera avec les modèles et les validations de l'utilisateur.
 
-- [ ] **Suite guidée par l'utilisateur :** faire vérifier Événements & ateliers et Galerie, puis attendre son prochain modèle. Les vérifications restantes de la Bibliothèque et les corrections de l'analyse restent à suivre séparément.
+- [ ] **Suite guidée par l'utilisateur :** faire vérifier Témoignages et Contact & localisation, puis attendre ses instructions. Les sections demandées pour l'accueil sont implémentées ; contenus officiels, validation visuelle et publication restent distincts. Les vérifications restantes de la Bibliothèque et les corrections de l'analyse restent à suivre séparément.
 - [ ] Finaliser les contenus de l'accueil et du footer selon les modèles et informations officielles fournis.
 - [ ] Construire les pages Musée / À propos avec histoire, missions et contenus validés.
 - [ ] Construire la liste complète des collections et les fiches objets/œuvres, avec images et notices.
@@ -114,6 +115,8 @@ Pour le footer du 15 octobre : `pnpm lint`, `pnpm build`, puis `pnpm typecheck` 
 
 Pour le retrait de l'Agenda du 15 octobre : suppression de son appel dans `HomePage`, du composant et du repository mock exclusivement utilisés par cette section ; liens vers `/#agenda` supprimés dans la navigation partagée et le footer. Recherche dans les sources : aucune référence résiduelle à `AgendaSection`, `HomeContent`, `homeRepository`, `practical-sections` ou `/#agenda`. `pnpm lint`, `pnpm build` et `pnpm typecheck` réussis (web exécuté ; autres tâches en cache lorsque pertinent). Navigateur : absence du titre, de la section `#agenda` et des liens correspondants ; Bibliothèque dernière section de `main`, suivie du footer. Aucun débordement horizontal à 320 et 1440 px ; rendu desktop inspecté et [capture enregistrée](screenshots/home-without-agenda.png). Les états événements/actualités de la page Bibliothèque restent présents. Pas de nouvel audit complet clavier, contrastes ou WCAG pour ce retrait ; aucun style interactif modifié. `git diff --check` réussi. Aucun contenu officiel ni document source modifié.
 
+Pour les sections Témoignages et Contact, réalisées les 15–16 octobre : `pnpm run lint`, `pnpm run build` et `pnpm run typecheck` réussis après la correction du focus (web exécuté ; admin/UI en cache lorsque pertinent, puis types exécutés pour les trois packages). Carrousel précédent/suivant et sélection directe vérifiés avec Entrée/Espace ; formulaire vide, espaces, e-mail invalide et message trop court contrôlés, focus placé sur le premier champ invalide. Saisie valide : erreurs effacées, valeurs conservées, retour du focus au bouton et mention explicite d'absence d'envoi ; modifier le message efface la confirmation précédente. Aucun débordement horizontal à 320, 430, 768, 1024, 1440 et 1920 px ; une colonne sous 1024 px, deux ensuite. Cibles du carrousel de 44/48 px, focus de 2 px et contrastes pertinents contrôlés. Carte générale chargée dans le navigateur, sans localisation précise du musée revendiquée. Captures desktop et contact mobile enregistrées. Pas d'audit WCAG complet, de mesure Core Web Vitals, de test avec lecteur d'écran ou de simulation de panne du repository ; voir le [compte rendu détaillé](testimonials-contact-validation.md). Zod 4.6.5, déjà présent transitivement, devient une dépendance directe pour la validation à la frontière du formulaire ; autres versions conservées. Les trois documents sources et les tokens du Design System restent intacts. Aucun déploiement ni push pour cette tâche.
+
 ## Démarrage local
 
 Depuis la racine : `pnpm install`, puis `pnpm dev`. Web : `http://localhost:3000` ; admin : `http://localhost:3001`.
@@ -136,6 +139,8 @@ Validation : `pnpm lint`, `pnpm build`, puis `pnpm typecheck`. Lancer build et t
 | 15 octobre 2026 | Push header/footer puis retrait de l'Agenda de l'accueil | Push confirmé jusqu'à `e72f575` sur `origin/master`. Section et code inutilisé retirés ensuite dans une tâche distincte ; lint/build/types et navigateur à 320/1440 px vérifiés. Push du retrait en attente d'un nouvel accord ; aucun déploiement du site. |
 | 15 octobre 2026 | Push du retrait de l'ancien Agenda | Confirmé jusqu'à `ac8a805` sur `origin/master`, après nouvel accord utilisateur |
 | 15 octobre 2026 | Événements & ateliers et Galerie selon deux nouveaux modèles | Implémentés sur mocks ; six cartes et huit illustrations, dont six générées. Lint/build/types réussis (web exécuté, autres tâches en cache lorsque pertinent), responsive à six largeurs et chargement des huit images vérifiés ; [compte rendu](activities-gallery-validation.md), [provenance des images](gallery-assets.md). Pas de validation institutionnelle, push ou déploiement pour cette tâche. |
-| Prochaine tâche | Validation visuelle des deux nouvelles sections | Faire vérifier le rendu puis attendre le prochain modèle ; push soumis à nouvel accord explicite |
+| 15 octobre 2026 | Push des sections Événements & ateliers et Galerie | Confirmé jusqu'à `5b639a9` sur `origin/master`, après nouvel accord utilisateur |
+| 15–16 octobre 2026 | Témoignages et Contact & localisation selon les deux derniers modèles | Implémentés dans le prototype ; lint/build/types et contrôles navigateur réussis. Avis fictifs, formulaire sans envoi, coordonnées à confirmer et carte de la ville. [Compte rendu](testimonials-contact-validation.md). Push en attente d'accord explicite ; aucun déploiement. |
+| Prochaine tâche | Validation visuelle de la fin de l'accueil | Faire vérifier le rendu puis attendre les instructions de l'utilisateur ; push soumis à nouvel accord explicite |
 
 Après chaque tâche : mettre à jour les cases concernées, l'état réel, les décisions et les vérifications ; ajouter une ligne au journal et remplacer la prochaine étape. Ne pas cocher une fonctionnalité seulement parce qu'une section ou un état vide existe. En cas d'arrêt, noter le blocage concret et la commande ou l'action nécessaire pour reprendre.

@@ -1,6 +1,9 @@
 import { cn } from "./utils";
 
 const paths = {
+  pin: "M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0ZM15 10a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z",
+  phone: "M4 3h4l2 5-3 2a14 14 0 0 0 7 7l2-3 5 2v4a1 1 0 0 1-1 1C10 21 3 14 3 4a1 1 0 0 1 1-1Z",
+  mail: "M3 5h18v14H3V5Zm0 0 9 7 9-7",
   building: "M3 10h18L12 4 3 10Zm2 10h14M7 13v5m5-5v5m5-5v5",
   palette: "M12 3a9 9 0 1 0 0 18h1a2 2 0 0 0 0-4h-1a2 2 0 0 1 0-4h3a6 6 0 0 0 0-10h-3ZM7 9h.01M10 6h.01M15 6h.01M18 9h.01",
   crown: "m3 6 4 4 5-6 5 6 4-4-3 12H6L3 6Zm4 15h10",
